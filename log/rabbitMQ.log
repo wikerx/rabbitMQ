@@ -51012,3 +51012,28 @@
 2019-09-24 15:12:59.095  INFO 13860 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[localhost].[/rabbitmq]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-09-24 15:12:59.096  INFO 13860 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2019-09-24 15:12:59.111  INFO 13860 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2019-09-24 16:47:15.037  INFO 13860 --- [http-nio-8080-exec-14] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the HTTP protocol
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:532) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:292) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.24.jar:9.0.24]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.24.jar:9.0.24]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-09-24 16:47:44.391  INFO 13860 --- [Thread-11] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-09-24 16:47:44.651  INFO 13860 --- [Thread-11] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-09-24 16:47:44.667  INFO 13860 --- [Thread-11] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-09-24 16:47:45.662  INFO 13860 --- [Thread-11] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-09-24 16:47:45.668  INFO 13860 --- [Thread-11] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-09-24 16:47:46.650  INFO 13860 --- [Thread-11] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-09-24 16:47:46.752  INFO 13860 --- [Thread-11] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-24 16:47:46.761  INFO 13860 --- [Thread-11] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-09-24 16:47:46.761  INFO 13860 --- [Thread-11] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-09-24 16:47:46.762  INFO 13860 --- [Thread-11] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
