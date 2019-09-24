@@ -18,7 +18,13 @@ public class QueueListener1 {
     @RabbitHandler
     public void displayMessage(Mail message) throws Exception {
         log.info("队列监听器1号收到消息：" + message.toString());
-        //channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);//如果需要确认的要调用
+//        Channel channel = null;
+//        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);//如果需要确认的要调用
+
+//        void basicAck(long deliveryTag, boolean multiple) throws IOException;
+//        参数解析
+//        　　deliveryTag：该消息的index
+//        　　multiple：是否批量处理.true:将一次性ack所有小于deliveryTag的消息。
 
 //        or
 //        log.info"队列监听器2号收到消息"+mail.toString());

@@ -9,7 +9,7 @@ public class DefaultString {
 
     public static final String QUENUE_DIRECT = "direct";
     public static final String QUENUE_DIRECT_QUEUE_ONE = "directqueue1";
-    public static final String QUENUE_DIRECT_QUEUE_TWO = "directqueue1";
+    public static final String QUENUE_DIRECT_QUEUE_TWO = "directqueue2";
 
 
     public static final String QUENUE_BIN_DING_ORANGE = "orange";

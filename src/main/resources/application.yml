@@ -27,3 +27,6 @@ spring:
         #acknowledge-mode: manual #设置确认模式手工确认
         concurrency: 3 #消费者最小数量
         max-concurrency: 10 # 消费者最大数量
+#  日志
+logging:
+  file: log/rabbitMQ.log

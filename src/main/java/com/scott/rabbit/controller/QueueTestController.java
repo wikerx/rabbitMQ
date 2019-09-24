@@ -18,22 +18,28 @@ public class QueueTestController {
 
     @RequestMapping(value = "/test0")
     public String test0(){
-        Mail mail = new Mail();
-        mail.setCountry("中国");
-        mail.setMailId("10001001");
-        mail.setWeight(12.56);
-        producer.sendMail(DefaultString.QUENUE_FIRST_ONE,mail);
+        for (int i = 0; i < 999; i++) {
+            Mail mail = new Mail();
+            mail.setCountry("中国");
+            mail.setMailId("10001001" + String.valueOf(i));
+            mail.setWeight(i);
+            producer.sendMail(DefaultString.QUENUE_FIRST_ONE, mail);
+        }
         return "OK";
     }
+
     @RequestMapping(value = "/test1")
     public String test1(){
-        Mail mail = new Mail();
-        mail.setCountry("中国");
-        mail.setMailId("10001001");
-        mail.setWeight(12.56);
-        producer.sendMail(DefaultString.QUENUE_FIRST,mail);
+        for (int i = 0; i < 999; i++) {
+            Mail mail = new Mail();
+            mail.setCountry("中国");
+            mail.setMailId("10001001" + String.valueOf(i));
+            mail.setWeight(i);
+            producer.sendMail(DefaultString.QUENUE_FIRST, mail);
+        }
         return "OK";
     }
+
     @RequestMapping(value = "/test2")
     public String test2(){
         String value = "{\n" +
@@ -85,8 +91,18 @@ public class QueueTestController {
                 "    },\n" +
                 "    \"tradeNo\": \"201909191630122510000000020644\"\n" +
                 "}";
-        producer.sendMessage(DefaultString.QUENUE_FIRST_TWO,value);
+        for (int i = 0; i < 999; i++) {
+            producer.sendMessage(DefaultString.QUENUE_FIRST_TWO, value);
+        }
         return value;
     }
 
+    @RequestMapping(value = "/testAll")
+    public void testAll(){
+        producer.sendMessage(DefaultString.TOPIC_QUEUE_ONE,"topic1");
+        producer.sendMessage(DefaultString.TOPIC_QUEUE_TWO,"topic2");
+        producer.sendMessage(DefaultString.QUENUE_DIRECT,"direct");
+        producer.sendMessage(DefaultString.QUENUE_DIRECT_QUEUE_ONE,"direct1");
+        producer.sendMessage(DefaultString.QUENUE_DIRECT_QUEUE_TWO,"direct2");
+    }
 }
