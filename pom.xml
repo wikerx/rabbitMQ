@@ -30,12 +30,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-        <!-- rabbitmq相关依赖 -->
-        <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
-            <version>3.0.4</version>
-        </dependency>
         <!-- 序列化相关依赖 -->
         <dependency>
             <groupId>commons-lang</groupId>

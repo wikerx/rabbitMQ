@@ -13,7 +13,7 @@ public class MQConnection {
     public static Connection getConnection() throws Exception{
 //        定义连接工厂
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        factory.setHost("127.0.0.1");
         factory.setPort(5672);
         factory.setUsername("admin");
         factory.setPassword("admin");

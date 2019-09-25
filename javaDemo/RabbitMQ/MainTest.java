@@ -20,19 +20,19 @@ public class MainTest {
 //        consumeMoreMessageBasic(DefaultString.QUENUE_TEST);
 
 //        订阅消息
-        product1(DefaultString.EXCHANGE_NAME,"巴拉巴拉小魔仙，变身！！！");
-        consume1(DefaultString.QUEUE_NAME1);
-        consume2(DefaultString.QUEUE_NAME2);
+//        product1(DefaultString.EXCHANGE_NAME,"巴拉巴拉小魔仙，变身！！！");
+//        consume1(DefaultString.QUEUE_NAME1);
+//        consume2(DefaultString.QUEUE_NAME2);
 
 //        路由模式
-        routeProduct(DefaultString.QUEUE_EXCHANGE_DIRECT, "巴拉巴拉小魔仙，变身！！！");
-        routeConsume1(DefaultString.QUEUE_QUEUE_EXCHANGE_DIRECT1);
-        routeConsume2(DefaultString.QUEUE_QUEUE_EXCHANGE_DIRECT2);
+//        routeProduct(DefaultString.QUEUE_EXCHANGE_DIRECT, "巴拉巴拉小魔仙，变身！！！");
+//        routeConsume1(DefaultString.QUEUE_QUEUE_EXCHANGE_DIRECT1);
+//        routeConsume2(DefaultString.QUEUE_QUEUE_EXCHANGE_DIRECT2);
 
 //        通配符模式
-        unusualProduct(DefaultString.QUEUE_EXCHANGE_TOPIC, "巴拉巴拉小魔仙，变身！！！");
-        unusualConsume1(DefaultString.QUEUE_QUEUE_EXCHANGE_TOPIC1);
-        unusualConsume2(DefaultString.QUEUE_QUEUE_EXCHANGE_TOPIC2);
+//        unusualProduct(DefaultString.QUEUE_EXCHANGE_TOPIC, "巴拉巴拉小魔仙，变身！！！");
+//        unusualConsume1(DefaultString.QUEUE_QUEUE_EXCHANGE_TOPIC1);
+//        unusualConsume2(DefaultString.QUEUE_QUEUE_EXCHANGE_TOPIC2);
 
 
     }
@@ -203,7 +203,7 @@ public class MainTest {
         //声明交换机 fanout：交换机类型 主要有fanout,direct,topics三种
         channel.exchangeDeclare(queueName,"direct");
         channel.basicPublish(queueName,"dog",null,message.getBytes());
-        System.out.println(message);
+        log.info(message);
         channel.close();
         connection.close();
     }
@@ -221,7 +221,7 @@ public class MainTest {
         while(true){
             QueueingConsumer.Delivery delivery = consumer.nextDelivery();
             String message = new String(delivery.getBody());
-            System.out.println(message);
+            log.info("消费消息：" + message);
         }
     }
 
@@ -238,7 +238,7 @@ public class MainTest {
         while(true){
             QueueingConsumer.Delivery delivery = consumer.nextDelivery();
             String message = new String(delivery.getBody());
-            System.out.println(message);
+            log.info("消费消息：" + message);
         }
     }
 
@@ -254,7 +254,7 @@ public class MainTest {
         //声明交换机 topic：交换机类型
         channel.exchangeDeclare(queueName,"topic");
         channel.basicPublish(queueName,"dog.1",null,message.getBytes());
-        System.out.println(message);
+        log.info(message);
         MQConnection.close(connection,channel);
     }
 
@@ -272,10 +272,9 @@ public class MainTest {
         while(true){
             QueueingConsumer.Delivery delivery = consumer.nextDelivery();
             String message = new String(delivery.getBody());
-            System.out.println(message);
+            log.info("消费消息：" + message);
         }
     }
-
 
 //    消费者
     public static void unusualConsume2(String queueName) throws Exception{
@@ -291,7 +290,7 @@ public class MainTest {
         while(true){
             QueueingConsumer.Delivery delivery = consumer.nextDelivery();
             String message = new String(delivery.getBody());
-            System.out.println(message);
+            log.info("消费消息：" + message);
         }
     }
 
