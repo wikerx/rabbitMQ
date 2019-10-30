@@ -8,7 +8,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@RabbitListener(queues = DefaultString.QUENUE_FIRST_TWO)
+@RabbitListener(queues = DefaultString.TOPIC_QUEUE_TWO)
 public class QueueListener2 {
     private static Log log = LogFactory.getLog(QueueListener2.class);
 

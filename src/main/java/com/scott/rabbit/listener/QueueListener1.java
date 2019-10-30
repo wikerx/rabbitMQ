@@ -1,11 +1,9 @@
 package com.scott.rabbit.listener;
 
-import com.rabbitmq.client.Channel;
 import com.scott.rabbit.entity.Mail;
 import com.scott.rabbit.utils.DefaultString;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
