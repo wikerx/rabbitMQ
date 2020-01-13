@@ -42,55 +42,7 @@ public class QueueTestController {
 
     @RequestMapping(value = "/test2")
     public String test2(){
-        String value = "{\n" +
-                "    \"additionalData\": \"附加数据.....\",\n" +
-                "    \"billNo\": \"201909191630132790000000020645\",\n" +
-                "    \"browserUrl\": \"https://www.baidu.com\",\n" +
-                "    \"cardHolderMessage\": {\n" +
-                "        \"city\": \"Auckland\",\n" +
-                "        \"country\": \"US\",\n" +
-                "        \"email\": \"funckyou@gmail.com\",\n" +
-                "        \"firstName\": \"laoBiao\",\n" +
-                "        \"ip\": \"192.168.0.55\",\n" +
-                "        \"lastName\": \"Xue\"\n" +
-                "    },\n" +
-                "    \"cardMessage\": {\n" +
-                "        \"cardExpireMonth\": \"02\",\n" +
-                "        \"cardExpireYear\": \"2020\",\n" +
-                "        \"cardNo\": \"4183680269057532\",\n" +
-                "        \"serviceCode\": \"100\"\n" +
-                "    },\n" +
-                "    \"failFree\": 0.2,\n" +
-                "    \"feeRateBond\": 0.2,\n" +
-                "    \"feeRateMerchant\": 0.1,\n" +
-                "    \"freeFeeRate\": 7.1035,\n" +
-                "    \"freezeFree\": 2,\n" +
-                "    \"functionCode\": \"100\",\n" +
-                "    \"refundFree\": 2,\n" +
-                "    \"remark\": \"REMARK\",\n" +
-                "    \"riskFree\": 2,\n" +
-                "    \"serverUrl\": \"https://www.baidu.com\",\n" +
-                "    \"serviceCode\": \"180\",\n" +
-                "    \"settleCurrency\": \"CNY\",\n" +
-                "    \"settleRate\": 7.1035,\n" +
-                "    \"successFree\": 0.2,\n" +
-                "    \"systemTrackingAuditNumber\": \"4552200000\",\n" +
-                "    \"terminalNumber\": \"0010\",\n" +
-                "    \"tradeDataMessage\": {\n" +
-                "        \"billAddress\": \"momo.com\",\n" +
-                "        \"cardOrgNo\": 0,\n" +
-                "        \"lableAmount\": 70,\n" +
-                "        \"lableCurrency\": \"USD\",\n" +
-                "        \"merNo\": \"100000010007\",\n" +
-                "        \"status\": 1,\n" +
-                "        \"tradeAmount\": 70,\n" +
-                "        \"tradeDateTimeGmt\": 1568853013277,\n" +
-                "        \"tradeDateTimeLocal\": 1568881812254,\n" +
-                "        \"tradeNo\": \"201909191630122510000000020644\",\n" +
-                "        \"traderCurrency\": \"USD\"\n" +
-                "    },\n" +
-                "    \"tradeNo\": \"201909191630122510000000020644\"\n" +
-                "}";
+        String value = "{\"actionCode\":\"082\",\"billNo\":\"201912301001068771\",\"cardHolderMessage\":{\"city\":\"USA\",\"country\":\"USA\",\"email\":\"test@gmail.com\",\"firstName\":\"Xue\",\"ip\":\"192.168.0.55\",\"lastName\":\"laoBiao\",\"stage\":\"USA\",\"street\":\"shennandadao 9966\",\"zip\":\"12524\"},\"cardMessage\":{\"cardExpireMonth\":\"07\",\"cardExpireYear\":\"2024\",\"cardNo\":\"36259600300107\",\"serviceCode\":\"960\"},\"failFree\":0,\"feeRateBond\":0.006,\"feeRateMerchant\":0.006,\"freeFeeRate\":1.00,\"freezeFree\":0,\"functionCode\":\"100\",\"pointOfServiceCode\":\"900101194130\",\"refundFree\":0,\"remark\":\"remark\",\"riskFree\":0,\"serverUrl\":\"192.168.0.208:8989/acquirer-receiveCallback/receiveCallback\",\"serviceCode\":\"900101194130\",\"settleCurrency\":\"USD\",\"settleRate\":1.00,\"successFree\":0,\"tradeDataMessage\":{\"aiic\":\"00000367270\",\"approvalCode\":\"677331\",\"billAddress\":\"adagfdg\",\"businessCode\":\"1594\",\"cardOrgNo\":5,\"explain\":\"approved by Xpress (stand–in)\",\"fiic\":\"00000361589\",\"lableAmount\":96.62,\"lableCurrency\":\"USD\",\"machineIp\":\"192.168.0.55\",\"merNo\":\"000100000010006\",\"netWorkReferenceNo\":\"071577671261654\",\"recivingCode\":\"00000367270\",\"status\":1,\"tradeAmount\":96.62,\"tradeDateTimeGmt\":1577642472326,\"tradeDateTimeLocal\":1577671270761,\"tradeNo\":\"201912301001099440000000000002\",\"traderCurrency\":\"USD\"},\"tradeNo\":\"201912301001099440000000000002\"}";
         for (int i = 0; i < 999; i++) {
             producer.sendMessage(DefaultString.QUENUE_FIRST_TWO, value);
         }

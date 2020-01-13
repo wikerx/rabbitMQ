@@ -24,9 +24,9 @@ spring:
     virtual-host: /
     listener:
       simple:
-        #acknowledge-mode: manual #ÉèÖÃÈ·ÈÏÄ£Ê½ÊÖ¹¤È·ÈÏ
-        concurrency: 3 #Ïû·ÑÕß×îĞ¡ÊıÁ¿
-        max-concurrency: 10 # Ïû·ÑÕß×î´óÊıÁ¿
-#  ÈÕÖ¾
+        #acknowledge-mode: manual #è®¾ç½®ç¡®è®¤æ¨¡å¼æ‰‹å·¥ç¡®è®¤
+        concurrency: 3 #æ¶ˆè´¹è€…æœ€å°æ•°é‡
+        max-concurrency: 10 # æ¶ˆè´¹è€…æœ€å¤§æ•°é‡
+#  æ—¥å¿—
 logging:
   file: log/rabbitMQ.log
